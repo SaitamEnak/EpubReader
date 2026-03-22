@@ -1,0 +1,6 @@
+.top-menu.visible {
+  transform: translateY(0) !important;
+}
+
+/* internal viewer fixes */
+/* text selection is allowed natively by epub.js */

@@ -1,0 +1,76 @@
+:root {
+  --e-ink-bg: #f4f4f5; /* Off-white grayish background of Kindle */
+  --e-ink-text: #18181b; /* Very dark gray, not pure black */
+  --e-ink-border: #d4d4d8;
+  --e-ink-hover: #e4e4e7;
+  
+  --font-bookerly: 'Bookerly', 'Georgia', serif;
+  --font-ember: 'Amazon Ember', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-palatino: 'Palatino', 'Palatino Linotype', 'Book Antiqua', serif;
+  
+  --ui-bg: #ffffff;
+  --ui-text: #000000;
+  --ui-border: #e0e0e0;
+}
+
+/* Dark mode variables for e-ink dark mode */
+[data-theme='dark'] {
+  --e-ink-bg: #121212;
+  --e-ink-text: #e0e0e0;
+  --e-ink-border: #333333;
+  --e-ink-hover: #222222;
+  
+  --ui-bg: #1e1e1e;
+  --ui-text: #ffffff;
+  --ui-border: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; /* Prevent text selection in UI elements */
+}
+
+body {
+  font-family: var(--font-ember);
+  background-color: #e0e0e0; /* Background around the emulator */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--e-ink-bg);
+  color: var(--e-ink-text);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Or if we want an emulator look, max-width and border */
+@media (min-width: 768px) {
+  .app-container {
+    width: 600px;
+    height: 800px; /* Tablet ratio */
+    border: 12px solid #222; /* Bezel */
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+}
+
+button {
+  font-family: var(--font-ember);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+}
